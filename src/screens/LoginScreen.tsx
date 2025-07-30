@@ -6,9 +6,12 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Lógica de autenticación aquí
-    console.log('Email:', email, 'Password:', password);
-    navigation.navigate('Home'); // Navegar a Home después del login
+    // Lógica de autenticación básica
+    if (email === 'test@example.com' && password === 'password') {
+      navigation.navigate('Main'); // Navegar a la pantalla principal (BottomTabNavigator)
+    } else {
+      Alert.alert('Error de inicio de sesión', 'Correo electrónico o contraseña incorrectos.');
+    }
   };
 
   const handleGoogleLogin = () => {
