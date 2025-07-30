@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, ActivityIndicator } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import LoginScreen from './src/screens/LoginScreen';
+
+const Stack = createNativeStackNavigator();
+
+// Componente temporal para la pantalla Home
+const HomeScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>¡Bienvenido a la pantalla principal!</Text>
+  </View>
+);
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowSplash(false);
+    }, 3000); // Muestra la pantalla de splash por 3 segundos
+  }, []);
+
+  if (showSplash) {
+    return (
+      <View className="flex-1 items-center justify-center bg-blue-500">
+        <Text className="text-4xl font-bold text-white mb-4">Uruguay Health App</Text>
+        <ActivityIndicator size="large" color="#ffffff" />
+        <Text className="text-lg text-white mt-2">Cargando...</Text>
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
