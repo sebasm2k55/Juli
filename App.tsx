@@ -4,15 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/screens/LoginScreen';
+import HomeScreen from './src/screens/HomeScreen'; // Importar HomeScreen
 
 const Stack = createNativeStackNavigator();
-
-// Componente temporal para la pantalla Home
-const HomeScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>¡Bienvenido a la pantalla principal!</Text>
-  </View>
-);
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
