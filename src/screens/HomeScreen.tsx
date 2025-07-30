@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Card 2: Recursos Cercanos */}
         <TouchableOpacity
           className="bg-green-500 p-6 rounded-lg items-center justify-center shadow-md"
-          onPress={() => console.log('Navegar a Recursos Cercanos')}
+          onPress={() => navigation.navigate('NearbyResources')}
         >
           {/* Icono de pin de mapa */}
           <Text className="text-white text-5xl mb-2">📍</Text>
