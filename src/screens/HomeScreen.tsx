@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Card 1: Asistente de Primeros Auxilios */}
         <TouchableOpacity
           className="bg-blue-500 p-6 rounded-lg items-center justify-center shadow-md"
-          onPress={() => console.log('Navegar a Asistente de Primeros Auxilios')}
+          onPress={() => navigation.navigate('FirstAidBot')}
         >
           {/* Icono de cruz de primeros auxilios */}
           <Text className="text-white text-5xl mb-2">+</Text>

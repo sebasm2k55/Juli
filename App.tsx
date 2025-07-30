@@ -5,7 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
-import ProfileScreen from './src/screens/ProfileScreen'; // Importar ProfileScreen
+import ProfileScreen from './src/screens/ProfileScreen';
+import FirstAidBotScreen from './src/screens/FirstAidBotScreen'; // Importar FirstAidBotScreen
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Inicio' }} />
         <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Mi Perfil' }} />
+        <Stack.Screen name="FirstAidBot" component={FirstAidBotScreen} options={{ title: 'Asistente de Primeros Auxilios' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
