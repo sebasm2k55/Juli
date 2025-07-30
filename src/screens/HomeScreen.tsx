@@ -40,7 +40,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Card 4: Mi Perfil y Consultas */}
         <TouchableOpacity
           className="bg-orange-500 p-6 rounded-lg items-center justify-center shadow-md"
-          onPress={() => console.log('Navegar a Mi Perfil y Consultas')}
+          onPress={() => navigation.navigate('Profile')}
         >
           {/* Icono de persona */}
           <Text className="text-white text-5xl mb-2">👤</Text>
