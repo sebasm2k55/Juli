@@ -30,7 +30,7 @@ const HomeScreen = ({ navigation }) => {
         {/* Card 3: Agendar un Servicio */}
         <TouchableOpacity
           className="bg-purple-500 p-6 rounded-lg items-center justify-center shadow-md"
-          onPress={() => console.log('Navegar a Agendar un Servicio')}
+          onPress={() => navigation.navigate('ScheduleService')}
         >
           {/* Icono de calendario */}
           <Text className="text-white text-5xl mb-2">📅</Text>
